@@ -1,0 +1,57 @@
+%script{:src => "https://code.jquery.com/jquery-2.1.4.min.js"}
+%script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"}
+:javascript
+  $( document ).ready(function(){
+    $('#myCarousel').carousel({
+      interval: 2000,
+      cycle: true
+    });
+  });
+#myCarousel.carousel.slide
+  / Indicators
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  .carousel-inner
+    .item.active
+      = image_tag('e.jpg', :alt => "rss feed", :class => "img-responsive")
+    .item
+      = image_tag('epic.jpg', :alt => "rss feed", :class => "img-responsive")
+    .item
+      = image_tag('idea.jpg', :alt => "rss feed", :class => "img-responsive")
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+    %span.glyphicon.glyphicon-chevron-left
+    %span.sr-only Previous
+  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+    %span.glyphicon.glyphicon-chevron-right
+    %span.sr-only Next
+/ /.carousel
+
+.pageContainer
+  .row
+    .product.col-xs-3
+      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+      by PUMPKIN
+      1,149.00
+      %button.btn Add to cart
+    .product.col-xs-3
+      = image_tag('handi box.jpg', :alt => "rss feed", :class => "img-responsive")
+      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+      by PUMPKIN
+      1,149.00
+      %button.btn Add to cart
+    .product.col-xs-3
+      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+      by PUMPKIN
+      1,149.00
+      %button.btn Add to cart
+    .product.col-xs-3
+      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+      by PUMPKIN
+      1,149.00
+      %button.btn Add to cart
+

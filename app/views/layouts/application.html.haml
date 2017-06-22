@@ -1,0 +1,63 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Pumpkin
+    %link{:href => "/assets/favicon.ico", :rel => "icon"}/
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{:style => "height: 100%"}
+    .row-fluid
+      .span1
+      .span10
+        .row-fluid.menubar
+          .page-title
+            %h1.pumpkin-logo Pumpkin
+            %span
+              %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
+              %span.cart-count 0
+            .pull-right
+              %div
+                %i.fa.fa-fax{"aria-hidden" => "true"}
+                %a.color-white{:href => "#"} +91-1676-220738
+              .email-details
+                %i.fa.fa-envelope-o{"aria-hidden" => "true"}
+                %a.color-white{:href => "#"} info@pumpkinzone.in
+              %div
+                %i.fa.fa-mobile{"aria-hidden" => "true"}
+                %a.color-white{:href => "#"} +91-921-7867546
+        .row-fluid
+          %ul.nav.nav-tabs.custom
+            %li
+              %a#home{:href => ""} Home
+            %li
+              %a#about_pumpkin{:href => ""} About Pumpkin
+            %li
+              %a#our_products{:href => ""} Our Products
+            %li
+              %a#certificates{:href => ""} Certificates
+            %li
+              %a#contact_us{:href => ""} Contact Us
+            %li
+              %a#useful_links{:href => ""} Useful Links
+            %li
+              %a#downloads{:href => ""} Downloads
+        .row-fluid
+          = yield
+        .row-fluid.footer{:style => "height: 100%"}
+          %div
+            %div
+              %h2{:style => "margin-top: 0px"} Connect with us
+            %div
+              %span
+                %i.fa.fa-facebook-square.fa-3x{"aria-hidden" => "true"}
+              %span
+                %i.fa.fa-twitter-square.fa-3x{"aria-hidden" => "true"}
+              %span
+                %i.fa.fa-youtube-square.fa-3x{"aria-hidden" => "true"}
+              %span
+                %i.fa.fa-pinterest-square.fa-3x{"aria-hidden" => "true"}
+          %div
+            Copyright @ Pumpkinzone
+      .span1

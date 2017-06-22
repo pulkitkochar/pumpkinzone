@@ -64,7 +64,7 @@ msg{
 
 .carousel-inner > .item > img {
   width:100%;
-  height: 400px !important;
+  height: 300px !important;
 }
 
 
@@ -85,6 +85,11 @@ body{
   padding: 10px 0px;
   font-size: 11px;
 }
+
+.custom{
+  padding-left: 30px !important;
+}
+
 
 
 a:hover{
@@ -127,12 +132,25 @@ h5.message{
 
 .pageContainer{
   background: #eaebeb;
-  border-radius: 10px;
   border: #cfcfcf 1px solid;
-  padding: 10px 20px;
-  margin-top: 5px;
+  padding: 10px 50px;
 }
 
+
+.product{
+  background: #ffffff;
+  border-radius: 5px;
+  border: #cfcfcf 1px solid;
+  padding: 10px 10px;
+  height: 400px;
+  width: 300px;
+}
+
+.product > img {
+  margin-top: -10px;
+  width: 95%;
+  height: 80%;
+}
 
 #table tr:nth-child(odd) input:disabled  {
   background-color: #f9f9f9;
