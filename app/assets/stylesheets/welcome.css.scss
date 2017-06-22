@@ -1,0 +1,151 @@
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+
+msg{
+  color: #500000;
+}
+
+.pumpkin-logo {
+  width: 156px;
+}
+
+.nav-tabs > li > a {
+  border: none;
+}
+
+.page-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #ffffff;
+  overflow: hidden;
+  clear:both;
+}
+
+.page-title h1{
+  background: url('logo.jpg') no-repeat;
+  text-indent: -9999px;
+  float:left;
+  width: 400px;
+}
+
+.page-title div.loginInfo{
+  float:right;
+  padding: 20px 0px 0px;
+  text-shadow: black 2px 1px 2px;
+}
+
+.page-title div.loginInfo a{
+  color: #7ecae0;
+}
+
+.page-title div.loginInfo span{
+  font-weight: bold;
+}
+
+body{
+  background: url('header_bg.png') repeat-x;
+}
+
+.span12>hr{
+  border-color: rgb(207, 207, 207);
+}
+
+.vertical-line{
+  border-right: 1px lightgrey inset;
+}
+
+.footer{
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 11px;
+}
+
+
+a:hover{
+  text-decoration: none;
+}
+
+
+h3{
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px 0px 20px;
+  margin: 0px;
+}
+
+h4{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+h5.message{
+  font-size:16px;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs a {
+  color: #006f8f;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: white 1px 1px 1px;
+}
+
+.nav-tabs{
+  list-style: none;
+  padding-top: 15px;
+  margin-left: 0px;
+}
+
+.pageContainer{
+  background: #eaebeb;
+  border-radius: 10px;
+  border: #cfcfcf 1px solid;
+  padding: 10px 20px;
+  margin-top: 5px;
+}
+
+
+#table tr:nth-child(odd) input:disabled  {
+  background-color: #f9f9f9;
+  cursor: auto;
+}
+
+#table tr:nth-child(even) input:disabled {
+  background-color: #eaebeb;
+  cursor: auto;
+}
+
+#table tr:hover input:disabled {
+  background-color: #f5f5f5;
+}
+
+
+.nav-tabs > li > ul {
+  position: absolute;
+  left:  542px;
+  top: 126px;
+  list-style: none;
+  background-color: #fff;
+  padding-right: 15px;
+  padding-left: 6px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: none;
+}
+.nav-tabs > li > ul > li {
+  padding:  4px;
+}
+.nav-tabs >  li:hover > ul {
+  display: block;
+}
+
+.modal-body label {
+  padding-top: 5px;
+}
