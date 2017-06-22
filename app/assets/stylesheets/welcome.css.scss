@@ -51,6 +51,12 @@ msg{
   font-weight: bold;
 }
 
+.carousel-inner > .item > img {
+  width:100%;
+  height: 400px !important;
+}
+
+
 body{
   background: url('header_bg.png') repeat-x;
 }
