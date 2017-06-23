@@ -3,10 +3,30 @@
 :javascript
   $( document ).ready(function(){
     $('#myCarousel').carousel({
-      interval: 2000,
+      interval: 5000,
       cycle: true
     });
   });
+
+  $( document ).ready(function(){
+    $('#myCarousel1').carousel({
+      interval: 2000000
+    });
+  });
+
+  $( document ).ready(function(){
+    $('#myCarousel2').carousel({
+      interval: 2000000
+    });
+  });
+
+  $( document ).ready(function(){
+    $('#myCarousel3').carousel({
+      interval: 2000000
+    });
+  });
+
+
 #myCarousel.carousel.slide
   / Indicators
   %ol.carousel-indicators
@@ -28,59 +48,341 @@
     %span.sr-only Next
 / /.carousel
 
+
 .pageContainer
-  .row
-    .product.col-xs-3
-      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-    .product.col-xs-3
-      = image_tag('handi box.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-    .product.col-xs-3
-      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-    .product.col-xs-3
-      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-  .row
-    .product.col-xs-3
-      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-    .product.col-xs-3
-      = image_tag('handi box.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-    .product.col-xs-3
-      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-    .product.col-xs-3
-      = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-      PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
-      by PUMPKIN
-      1,149.00
-      %button.btn Add to cart
-  .row
-    %button.center.col-md-2.col-md-offset-5 Show More Products
+  .row.vertical-divider
+    .col-xs-2
+      = image_tag('pressurecooker1.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('cookware2.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('hardanod3.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('induction4.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('anodut5.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('pressurecooker1.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('cookware2.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('hardanod3.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('induction4.jpg', :alt => "rss feed", :class => "img-responsive")
+    .col-xs-10
+      %hr
+      .row.type
+        %span.h2 Pumpkin Pressure Cookers
+        %span
+          %a.see_more See more
+      .row
+        #myCarousel1.carousel.slide
+          / Indicators
+          %ol.carousel-indicators
+            %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel1"}
+            %li{"data-slide-to" => "1", "data-target" => "#myCarousel1"}
+            %li{"data-slide-to" => "2", "data-target" => "#myCarousel1"}
+          .carousel-inner
+            .item.active
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+          %a.left.carousel-control-new{"data-slide" => "prev", :href => "#myCarousel1"}
+            %span.glyphicon.glyphicon-chevron-left
+            %span.sr-only Previous
+          %a.right.carousel-control-new{"data-slide" => "next", :href => "#myCarousel1"}
+            %span.glyphicon.glyphicon-chevron-right
+            %span.sr-only Next
+        / /.carousel
+
+      %hr.type
+      .row.type
+        %span.h2 Royal Finish Cookwares
+        %span
+          %a.see_more See more
+      .row
+        #myCarousel2.carousel.slide
+          / Indicators
+          %ol.carousel-indicators
+            %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel2"}
+            %li{"data-slide-to" => "1", "data-target" => "#myCarousel2"}
+            %li{"data-slide-to" => "2", "data-target" => "#myCarousel2"}
+          .carousel-inner
+            .item.active
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+          %a.left.carousel-control-new{"data-slide" => "prev", :href => "#myCarousel2"}
+            %span.glyphicon.glyphicon-chevron-left
+            %span.sr-only Previous
+          %a.right.carousel-control-new{"data-slide" => "next", :href => "#myCarousel2"}
+            %span.glyphicon.glyphicon-chevron-right
+            %span.sr-only Next
+        / /.carousel
+
+      %hr.type
+      .row.type
+        %span.h2 Induction Cookware
+        %span
+          %a.see_more See more
+      .row
+        #myCarousel3.carousel.slide
+          / Indicators
+          %ol.carousel-indicators
+            %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel3"}
+            %li{"data-slide-to" => "1", "data-target" => "#myCarousel3"}
+            %li{"data-slide-to" => "2", "data-target" => "#myCarousel3"}
+          .carousel-inner
+            .item.active
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+          %a.left.carousel-control-new{"data-slide" => "prev", :href => "#myCarousel3"}
+            %span.glyphicon.glyphicon-chevron-left
+            %span.sr-only Previous
+          %a.right.carousel-control-new{"data-slide" => "next", :href => "#myCarousel3"}
+            %span.glyphicon.glyphicon-chevron-right
+            %span.sr-only Next
+        / /.carousel
+
+      %hr.type
+      .row
+        %button.center.col-md-12
+          %span
+            View All Products
+          %span.view_all.glyphicon.glyphicon-chevron-right
+
+
+  -#.row
+  -#  .col-xs-3
+  -#    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#  .col-xs-3
+  -#    = image_tag('handi box.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#  .col-xs-3
+  -#    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#  .product.col-xs-3
+  -#    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#.row
+  -#  .product.col-xs-3
+  -#    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#  .product.col-xs-3
+  -#    = image_tag('handi box.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#  .product.col-xs-3
+  -#    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#  .product.col-xs-3
+  -#    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+  -#    PUMPKIN PRESSURE COOKER WITH INDUCTION BASE (HANDI MODEL) 5 LTR
+  -#    by PUMPKIN
+  -#    1,149.00
+  -#    %button.btn Add to cart
+  -#.row
+  -#  %button.center.col-md-2.col-md-offset-5 Show More Products
 
 
 

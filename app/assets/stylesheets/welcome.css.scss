@@ -6,6 +6,23 @@ div {
 
 .center{
   text-align: center;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 400 !important;
+  color: #444444 !important;
+  text-rendering: optimizeLegibility !important;
+  font-family: "Amazon Ember",Arial,sans-serif !important;
+  background-color: white;
+  border-width: 2px;
+}
+
+.view_all{
+  top: 3px !important;
+  margin-left: 15px;
+}
+
+.row{
+  margin-left: 0px !important;
 }
 
 
@@ -58,6 +75,34 @@ msg{
   margin-left: 800px;
 }
 
+
+
+
+
+
+
+.quick_look {
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+  border: solid 2px black;
+  z-index: 1;
+}
+
+.container:hover .quick_look {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
 .cart-count{
   font-size: 35px;
 }
@@ -80,9 +125,20 @@ body{
   border-color: rgb(207, 207, 207);
 }
 
-.vertical-line{
-  border-right: 1px lightgrey inset;
+.row.vertical-divider {
+  margin-top: 1%;
+  overflow: hidden;
 }
+.row.vertical-divider > div[class^="col-"] {
+  border-left: 1px solid #eeeeee;
+}
+.row.vertical-divider div[class^="col-"]:first-child {
+  border-left: none;
+}
+.row.vertical-divider div[class^="col-"]:last-child {
+  border-right: none;
+}
+
 
 .footer{
   text-align: center;
@@ -107,6 +163,14 @@ h3{
   font-weight: bold;
   padding: 0px 0px 20px;
   margin: 0px;
+}
+
+.h2{
+  font-size: 21px !important;
+  font-weight: 400 !important;
+  color: #444444 !important;
+  text-rendering: optimizeLegibility !important;
+  font-family: "Amazon Ember",Arial,sans-serif !important;
 }
 
 h4{
@@ -135,12 +199,18 @@ h5.message{
   margin-left: 0px;
 }
 
-.pageContainer{
-  background: #eaebeb;
-  border: #cfcfcf 1px solid;
-  padding: 10px 50px;
+.see_more{
+  padding-left: 5px;
 }
 
+.pageContainer{
+  background: #ffffff;
+  padding-right: 50px;
+}
+
+.type{
+  margin-top: 30px;
+}
 
 .product{
   background: #ffffff;
@@ -177,7 +247,7 @@ h5.message{
 
 .footer{
   background-color: gray;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 .email-details{
