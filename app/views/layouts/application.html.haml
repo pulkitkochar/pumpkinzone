@@ -16,7 +16,7 @@
             %h1.pumpkin-logo Pumpkin
             %span
               %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
-              %span.cart-count 0
+              %span.cart-count #{@order.try(:order_items).sum(:quantity) || 0}
             .pull-right
               %div
                 %i.fa.fa-fax{"aria-hidden" => "true"}
