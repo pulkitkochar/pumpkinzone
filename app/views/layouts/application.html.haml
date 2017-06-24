@@ -14,8 +14,8 @@
         .row-fluid.menubar
           .page-title
             %h1.pumpkin-logo Pumpkin Zone
-            .page-right.pull-right
-              %a.color-white{:href => "/carts/show"}
+            .page-right
+              %a.color-white.cart{:href => "/carts/show"}
                 %span4.shopping-cart
                   %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
                   %span.cart-count #{@order.order_items.sum(:quantity)}
