@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  get 'welcome/about'
+  get '/about_us' => 'welcome#about'
 
   resources :products, only: [:index]
   resource :cart, only: [:show]

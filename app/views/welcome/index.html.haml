@@ -26,6 +26,18 @@
     });
   });
 
+#myModal.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %h4.modal-title Product details
+      .modal-body
+        %span
+          = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
 
 #myCarousel.carousel.slide
   / Indicators
@@ -60,7 +72,7 @@
         %input{type: 'button', class: 'view_more', value: 'View More'}
       %hr
       .product
-        .theme New Launch
+        .theme About Us
         = image_tag('1.png', :alt => "rss feed", :class => "img-responsive")
         .description Pumpkin is a fast growing brand setup by Sunil Steel Industries in Pressure Cookers and in Cookwares
         %input{type: 'button', class: 'view_more', value: 'View More'}
@@ -84,64 +96,64 @@
                   %span
                     = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
                   %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal"}
                 .col-xs-3.container
                   %span
                     = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
                   %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal"}
                 .col-xs-3.container
                   %span
                     = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
                   %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal"}
                 .col-xs-3.container
                   %span
                     = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal"}
+            .item
+              .row
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
+                  %span.col-md-offset-3
+                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
+                .col-xs-3.container
+                  %span
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
                   %span.col-md-offset-3
                     %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
             .item
               .row
                 .col-xs-3.container
                   %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
                   %span.col-md-offset-3
                     %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
                 .col-xs-3.container
                   %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
                   %span.col-md-offset-3
                     %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
                 .col-xs-3.container
                   %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
                   %span.col-md-offset-3
                     %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
                 .col-xs-3.container
                   %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-                  %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
-            .item
-              .row
-                .col-xs-3.container
-                  %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-                  %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
-                .col-xs-3.container
-                  %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-                  %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
-                .col-xs-3.container
-                  %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
-                  %span.col-md-offset-3
-                    %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
-                .col-xs-3.container
-                  %span
-                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive")
+                    = image_tag('handi model.jpg', :alt => "rss feed", :class => "img-responsive", "data-target" => "#myModal", "data-toggle" => "modal")
                   %span.col-md-offset-3
                     %input{type: 'button', class: 'quick_look', value: 'Quick Look'}
           %a.left.carousel-control-new{"data-slide" => "prev", :href => "#myCarousel1"}

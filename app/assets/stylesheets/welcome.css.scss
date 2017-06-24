@@ -211,7 +211,7 @@ h5.message{
   border: #cfcfcf 1px solid;
   height: 350px;
   background-color: #eaebeb;
-  box-shadow: 3px 3px 5px 6px #CCCCCC;
+  box-shadow: 3px 3px 3px 3px #CCCCCC;
 }
 
 .product > img {
@@ -229,6 +229,21 @@ h5.message{
   font-weight: bolder;
   font-size: x-large;
   text-align: center;
+}
+
+.theme_divider{
+  margin-top: 0 !important;
+  margin-bottom: 5px !important;
+  border-color: black !important;
+}
+
+.theme_img{
+  width: 80%;
+  margin-left: 10%;
+}
+
+#myModal{
+ margin-top: 12%;
 }
 
 .description{
