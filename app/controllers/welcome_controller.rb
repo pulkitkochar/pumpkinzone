@@ -4,5 +4,6 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    @order = current_order
   end
 end

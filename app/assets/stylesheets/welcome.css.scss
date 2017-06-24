@@ -233,7 +233,7 @@ h5.message{
 
 .theme_divider{
   margin-top: 0 !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 0px !important;
   border-color: black !important;
 }
 
@@ -247,9 +247,21 @@ h5.message{
 }
 
 .description{
-  padding-top: 10px;
-  text-align: center;
-  font-weight: bold;
+   padding-top: 10px;
+   text-align: center;
+   font-weight: bold;
+   background-color: #eaebeb;
+ }
+
+.text{
+  padding-top: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  line-height: 20px;
+  font-family: sans-serif;
+  text-align: left;
+  font-weight: 500;
+  font-size: large;
 }
 
 #table tr:nth-child(odd) input:disabled  {
