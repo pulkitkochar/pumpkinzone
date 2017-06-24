@@ -14,19 +14,20 @@
         .row-fluid.menubar
           .page-title
             %h1.pumpkin-logo Pumpkin Zone
-            %span
-              %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
-              %span.cart-count #{@order.order_items.sum(:quantity)}
-            .pull-right
-              %div
-                %i.fa.fa-fax{"aria-hidden" => "true"}
-                %a.color-white{:href => "#"} +91-1676-220738
-              .email-details
-                %i.fa.fa-envelope-o{"aria-hidden" => "true"}
-                %a.color-white{:href => "#"} info@pumpkinzone.in
-              %div
-                %i.fa.fa-mobile{"aria-hidden" => "true"}
-                %a.color-white{:href => "#"} +91-921-7867546
+            .page-right.pull-right
+              %span4.shopping-cart
+                %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
+                %span.cart-count #{@order.order_items.sum(:quantity)}
+              %span8.pull-right.contact-details
+                %div
+                  %i.fa.fa-fax{"aria-hidden" => "true"}
+                  %a.color-white{:href => "#"} +91-1676-220738
+                .email-details
+                  %i.fa.fa-envelope-o{"aria-hidden" => "true"}
+                  %a.color-white{:href => "#"} info@pumpkinzone.in
+                %div
+                  %i.fa.fa-mobile{"aria-hidden" => "true"}
+                  %a.color-white{:href => "#"} +91-921-7867546
         .row-fluid
           %ul.nav.nav-tabs.custom
             %li
