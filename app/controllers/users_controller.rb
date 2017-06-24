@@ -1,18 +1,20 @@
 class UsersController < ApplicationController
   def new
-
+    @order = current_order
+    @order_items = current_order.order_items
+    @user = User.new
   end
 
   def create
-    @order = current_order
-    @existing_item = @order.order_items.where(product_id: order_item_params[:product_id])
-    if @existing_item.exists?
-      @existing_item.first.update_attributes(quantity: @existing_item.first.quantity + order_item_params[:quantity].to_i)
-    else
-      @order_item = @order.order_items.new(order_item_params)
-      @order.save
-    end
-    session[:order_id] = @order.id
-    redirect_to :back
+    @user = User.new(user_params)
+    @user.order_id = current_order.id
+    @user.save
+    redirect_to '/payment/new'
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit!
   end
 end

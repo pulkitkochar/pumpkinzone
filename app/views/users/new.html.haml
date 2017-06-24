@@ -1,0 +1,74 @@
+.row-fluid
+  .form-horizontal
+    = form_for(@user) do |f|
+      -if @user.errors.any?
+        #error_explanation
+          %h2= pluralize(@user.errors.count, "error")
+          %ul
+            -@user.errors.full_messages.each do |msg|
+              %li=  msg
+            %end
+      %end
+
+        .row-fluid
+          .span2
+            = f.label "Name:"
+          .span4
+            .control-group
+              = f.text_field :name, :id => 'name', required: true, title: 'only alphabets', pattern: '^[a-z A-Z]+$', autofocus: true
+
+        .row-fluid
+          .span2
+            = f.label "Mobile No:"
+          .span4
+            .control-group
+              = f.text_field :mobile_number, :id => 'mobile_number', required: true, title: 'exactly 10 integers ', pattern: '^[0-9]{10}$'
+
+        .row-fluid
+          .span2
+            = f.label "Email:"
+          .span4
+            .control-group
+              = f.text_field :email, :id => 'email', required: true, title: 'valid email', pattern: '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'
+        .row-fluid
+          .span2
+            = f.label "House no:"
+          .span4
+            .control-group
+              = f.text_field :house, :id => 'house', required: true, autofocus: true
+        .row-fluid
+          .span2
+            = f.label "Locality"
+          .span4
+            .control-group
+              = f.text_field :locality, :id => 'locality', required: true, autofocus: true
+        .row-fluid
+          .span2
+            = f.label "Landmark"
+          .span4
+            .control-group
+              = f.text_field :landmark, :id => 'landmark', required: true, autofocus: true
+        .row-fluid
+          .span2
+            = f.label "City"
+          .span4
+            .control-group
+              = f.text_field :city, :id => 'city', required: true, autofocus: true\
+        .row-fluid
+          .span2
+            = f.label "State"
+          .span4
+            .control-group
+              = f.text_field :state, :id => 'state', required: true, autofocus: true
+        .row-fluid
+          .span2
+            = f.label "Pincode"
+          .span4
+            .control-group
+              = f.text_field :pincode, :id => 'pincode', required: true, autofocus: true
+
+
+        .row-fluid
+          .span2
+          .span4
+            = f.submit :class => 'btn btn-primary' ,id: "submit"

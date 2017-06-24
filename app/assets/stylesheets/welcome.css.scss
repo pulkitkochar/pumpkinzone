@@ -54,7 +54,6 @@ msg{
   background: url('logo.jpg') no-repeat;
   text-indent: -9999px;
   float:left;
-  width: 400px;
 }
 
 .color-white {
@@ -294,7 +293,7 @@ h5.message{
 }
 
 .page-right{
-  margin-top: -5%;
+  float: right;
 }
 
 .pumpkin-logo{

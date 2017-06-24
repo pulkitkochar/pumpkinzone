@@ -11,21 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624133157) do
-
-  create_table "users", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "house"
-    t.string   "locality"
-    t.string   "landmark"
-    t.string   "city"
-    t.string   "state"
-    t.string   "pincode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
+ActiveRecord::Schema.define(version: 20170624133144) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -70,6 +56,12 @@ ActiveRecord::Schema.define(version: 20170624133157) do
     t.string   "name"
     t.string   "email"
     t.string   "mobile_number"
+    t.string   "house"
+    t.string   "locality"
+    t.string   "landmark"
+    t.string   "city"
+    t.string   "state"
+    t.string   "pincode"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
