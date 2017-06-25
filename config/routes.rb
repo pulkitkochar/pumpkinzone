@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  get 'payments/new'
+
   get '/about_us' => 'welcome#about'
+
+  get '/admin/orders' => 'admin#orders'
 
   resources :products, only: [:index]
   resource :cart, only: [:show]
