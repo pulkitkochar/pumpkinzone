@@ -2,7 +2,7 @@
   %span
     = image_tag("products/#{product.id}a.jpg", :alt => "rss feed", :class => "img-responsive")
   %span.col-md-offset-3
-    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal", data: {product_id: product.id} }
+    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal"}
   #myModal.modal.fade{:role => "dialog"}
     .modal-dialog
       .modal-content
