@@ -1,5 +1,19 @@
-%h3.text-center Products for Sale
-.row
-  .col-xs-6.col-xs-offset-3
-    - @products.each do |product|
-      = render "product_row", product: product, order_item: @order_item
+.pageContainer
+  .row.vertical-divider
+    .col-xs-2
+      %hr
+      .product
+        .theme New Launch
+        = image_tag('new_launch_home.png', :alt => "rss feed", :class => "img-responsive")
+        .description Pumpkin launches its new products Elantra in Pressure Cookers and Hard Anodized Cookwares
+        %a.btn.button.view_more{href: '/about_us'} View More
+      %hr
+      .product
+        .theme About Us
+        = image_tag('about_us_home.png', :alt => "rss feed", :class => "img-responsive")
+        .description Pumpkin is a fast growing brand setup by Sunil Steel Industries in Pressure Cookers and in Cookwares
+        %a.btn.button.view_more{href: '/about_us'} View More
+    .col-xs-10
+      %hr
+        - @products.each_slice(3).to_a.each do |product_row|
+          = render "product_row", product_row: product_row, order_item: @order_item

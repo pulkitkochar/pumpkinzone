@@ -1,0 +1,40 @@
+.col-xs-4.container
+  %span
+    = image_tag("products/#{product.id}a.jpg", :alt => "rss feed", :class => "img-responsive")
+    = form_for order_item, remote: true do |f|
+      %h5.text-left
+        Price:
+        %span= number_to_currency product.price
+      %hr
+      %h4= product.name
+      .input-group
+        = f.number_field :quantity, value: "#{@order.order_items.where(product_id: product.id).first.try(:quantity) || 1}", class: "form-control", min: 1
+        .input-group-btn
+          = f.hidden_field :product_id, value: product.id
+          = f.submit "Add to Cart", class: "btn btn-primary"
+  %span.col-md-offset-4
+    %input{id: "quick_look#{product.id}",type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal#{product.id}", "data-toggle" => "modal"}
+    %div.modal{id: "myModal#{product.id}", "aria-hidden" => "true",  :role => "dialog"}
+      .modal-dialog
+        .modal-content
+          .modal-body
+            .row
+              %button.close{"data-dismiss" => "modal", :type => "button"} ×
+              .col-xs-8
+                %span
+                  %div.carousel.slide{id: "productCarousel#{product.id}"}
+                    .carousel-inner
+                      - Dir.glob("./app/assets/images/products/#{product.id}?.jpg").each_with_index do |image_path, i|
+                        = render "modal_carousal", image: image_path, class_active: i == 0 ? 'active' : ''
+                    %a.left.carousel-control-new{"data-slide" => "prev", :href => "#productCarousel#{product.id}"}
+                      %span.glyphicon.glyphicon-chevron-left
+                      %span.sr-only Previous
+                    %a.right.carousel-control-new{"data-slide" => "next", :href => "#productCarousel#{product.id}"}
+                      %span.glyphicon.glyphicon-chevron-right
+                      %span.sr-only Next
+              / /.carousel
+              .col-xs-4.description
+                Add to Cart
+                = "#{product.id}"
+
+
