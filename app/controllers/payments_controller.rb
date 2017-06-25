@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   def new
     @order = current_order
     @order_items = current_order.order_items
+    @total_price = @order_items.sum(:total_price)
   end
 
   def create
