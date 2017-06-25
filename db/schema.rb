@@ -67,8 +67,11 @@ ActiveRecord::Schema.define(version: 20170624171522) do
     t.string   "city"
     t.string   "state"
     t.string   "pincode"
+    t.integer  "order_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  add_index "users", ["order_id"], name: "index_users_on_order_id"
 
 end
