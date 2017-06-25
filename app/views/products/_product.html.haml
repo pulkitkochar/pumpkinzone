@@ -34,7 +34,16 @@
                       %span.sr-only Next
               / /.carousel
               .col-xs-4.description
-                Add to Cart
-                = "#{product.id}"
+                = form_for @order_item, remote: true do |f|
+                  %h5.text-left
+                    Price:
+                    %span= number_to_currency product.price
+                  %hr
+                  %h4= product.name
+                  .input-group
+                    = f.number_field :quantity, value: "#{@order.order_items.where(product_id: product.id).first.try(:quantity) || 1}", class: "form-control", min: 1
+                    .input-group-btn
+                      = f.hidden_field :product_id, value: product.id
+                      = f.submit "Add to Cart", class: "btn btn-primary"
 
 
