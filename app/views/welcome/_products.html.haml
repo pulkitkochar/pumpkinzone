@@ -1,4 +1,4 @@
 %div.item{class: class_active}
   .row
     - products.each do |product|
-      = render "product", product: product
+      = render "product", product: product, active: class_active
