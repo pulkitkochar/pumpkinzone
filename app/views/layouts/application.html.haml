@@ -12,9 +12,9 @@
       .span1
       .span10
         .row-fluid.menubar
-          - if !current_page?(controller: 'admin', action: 'orders')
-            .page-title
-              %h1.pumpkin-logo Pumpkin Zone
+          .page-title
+            %h1.pumpkin-logo Pumpkin Zone
+            - if !current_page?(controller: 'admin', action: 'orders')
               .page-right
                 %a.color-white.cart{:href => "/carts/show"}
                   %span4.shopping-cart

@@ -1,7 +1,28 @@
-- @orders.each do |order|
-  - order.order_items.each do |order_item|
-    .color-white
-      = order.id
-      = order_item.quantity
-      = order_item.unit_price
+%h1 Orders
+%table.order-details
+  %tr
+    %th Order Id
+    %th Product Id
+    %th Quantity
+    %th Total Price
+    %th Name
+    %th Contact number
+    %th Address
+    - @orders.each do |order|
+      - order.order_items.each do |order_item|
+        %tr.order_details
+          %td
+            = order.id
+          %td
+            = order_item.product_id
+          %td
+            = order_item.quantity
+          %td
+            = order_item.total_price
+          %td
+            = order.user.try(:name)
+          %td
+            = order.user.try(:mobile_number)
+          %td
+            = "#{order.user.try(:house)} #{order.user.try(:landmark)} #{order.user.try(:city)} #{order.user.try(:state)} #{order.user.try(:pincode)}"
   
