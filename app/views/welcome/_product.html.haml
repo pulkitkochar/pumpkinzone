@@ -2,4 +2,32 @@
   %span
     = image_tag("products/#{product.id}a.jpg", :alt => "rss feed", :class => "img-responsive")
   %span.col-md-offset-3
-    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal", "data-product" => product }
+    %input{type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#myModal", "data-toggle" => "modal", data: {product_id: product.id} }
+  #myModal.modal.fade{:role => "dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-body
+          .row
+            %button.close{"data-dismiss" => "modal", :type => "button"} ×
+            .col-xs-8
+              %span
+                #myCarousel4.carousel.slide
+                  / Indicators
+                  %ol.carousel-indicators
+                    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel4"}
+                    %li{"data-slide-to" => "1", "data-target" => "#myCarousel4"}
+                  .carousel-inner
+                    .item.active
+                      = image_tag('products/1a.jpg', :alt => "rss feed", :class => "product_image")
+                    .item
+                      = image_tag('products/1b.jpg', :alt => "rss feed", :class => "product_image")
+                  %a.left.carousel-control-new{"data-slide" => "prev", :href => "#myCarousel4"}
+                    %span.glyphicon.glyphicon-chevron-left
+                    %span.sr-only Previous
+                  %a.right.carousel-control-new{"data-slide" => "next", :href => "#myCarousel4"}
+                    %span.glyphicon.glyphicon-chevron-right
+                    %span.sr-only Next
+            / /.carousel
+            .col-xs-4.description
+              Add to Cart
+              = "#{product.id}"
