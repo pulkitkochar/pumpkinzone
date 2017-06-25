@@ -234,9 +234,13 @@ h5.message{
   height: 45%;
 }
 
-.product > input {
-  margin-left: 30%;
-  margin-top: 10px;
+.product > a {
+  background-color: buttonface;
+  border-radius: 2px;
+  border-color: black;
+  color: #444444;
+  margin-left: 27%;
+  margin-top: 2%;
 }
 
 .theme{
@@ -257,8 +261,26 @@ h5.message{
   margin-left: 10%;
 }
 
-#myModal{
- margin-top: 12%;
+.modal-dialog{
+  margin-top: 15% !important;
+  width: 80% !important;
+  margin-left: 10% !important;
+}
+
+.modal-body{
+  padding: 0px !important;
+}
+
+.modal-body > .row {
+  margin-right: 0px;
+  height: 350px;
+}
+
+.product_image{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 80% !important;
+  padding-left: 10%;
 }
 
 .description{
@@ -331,8 +353,4 @@ h5.message{
 }
 .nav-tabs >  li:hover > ul {
   display: block;
-}
-
-.modal-body label {
-  padding-top: 5px;
 }
