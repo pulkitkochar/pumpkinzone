@@ -100,7 +100,7 @@ a.color-white:hover{
   border: solid 1px black;
 }
 
-.quick_look {
+.col-md-offset-3 > .quick_look {
   text-align: center;
   opacity: 0;
   transition: opacity .35s ease;
@@ -193,10 +193,6 @@ h5{
   font-size:16px !important;
 }
 
-.input-group{
-  float: bottom;
-}
-
 .nav-tabs {
   border-bottom: none;
 }
@@ -212,6 +208,22 @@ h5{
   list-style: none;
   padding-top: 15px;
   margin-left: 0px;
+}
+
+.form-control{
+  width: 20% !important;
+  margin-left: 50%;
+  text-align: center !important;
+}
+
+.view_in_detail{
+  margin-left: -60% !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.input-group-btn > .btn{
+  margin-left: -70% !important;
 }
 
 .see_more{
