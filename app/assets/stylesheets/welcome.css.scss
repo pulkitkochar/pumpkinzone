@@ -65,7 +65,8 @@ msg{
 }
 
 .orange-color{
-  background-color: #f7931d;
+  background-color: #f7931d !important;
+  border-color: #f7931d !important;
 }
 
 .checkout-btn{
@@ -91,7 +92,7 @@ a.color-white:hover{
 }
 
 .fa-shopping-cart{
-  padding-left: 68%;
+  //padding-left: 68%;
 }
 
 .view_more{
@@ -333,16 +334,14 @@ h5{
   background-color: #f5f5f5;
 }
 
-.page-right{
-  //float: right;
-}
-
 .pumpkin-logo{
   margin-left: 10px;
 }
 
 .contact-details{
   padding-right: 2%;
+  margin-top: -4%;
+  float: right;
 }
 
 .footer{
@@ -382,4 +381,9 @@ h5{
   background-color: #333333;
   font-size: 18px;
   padding-left: 2%;
+}
+
+.search-box{
+  width: 50%;
+  margin-top: 1.3%;
 }
