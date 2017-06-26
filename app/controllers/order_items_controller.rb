@@ -9,6 +9,7 @@ class OrderItemsController < ApplicationController
       @order.save
     end
     session[:order_id] = @order.id
+    flash[:success] = "Added product to cart"
     redirect_to :back
   end
 
