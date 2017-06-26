@@ -47,9 +47,10 @@
             %li
               %a#downloads{:href => ""} Downloads
         .row-fluid
-          - flash.each do |k,v|
-            %div.alert-success
-              = v
+          - flash.each do |type, message|
+            %div{:class => "alert success fade in success-msg"}
+              %button.close{"data-dismiss" => "alert"} ×
+              = message
           = yield
         .row-fluid.footer{:style => "height: 100%"}
           %div
