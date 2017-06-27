@@ -54,10 +54,8 @@
         = image_tag('about_us_home.png', :alt => "rss feed", :class => "img-responsive")
         .description Pumpkin is a fast growing brand setup by Sunil Steel Industries in Pressure Cookers and in Cookwares
         %a.btn.button.view_more{href: '/about_us'} View More
-    .col-xs-10
-      %hr
-      - @products_with_categories.each do |products_with_category|
-        = render "category_corousal", products_with_category: products_with_category
+    .col-xs-10#products
+      = render "product_categories", product_categories: @products_with_categories
 
       .row
         %button.center.col-md-12

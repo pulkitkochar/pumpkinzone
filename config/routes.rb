@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'payments/new'
 
+  get '/search' => 'welcome#search'
+
   get '/about_us' => 'welcome#about'
 
   get '/admin/orders' => 'admin#orders'
