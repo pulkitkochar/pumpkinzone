@@ -8,74 +8,69 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:style => "height: 100%"}
-    .row-fluid
-      .span1
-      .span10
-        .row-fluid.menubar
-          .page-title
-            %span2
-              %h1.pumpkin-logo Pumpkin Zone
-            %span6
-              .input-group.search-box
-                %input.form-control{:placeholder => "Search...", :type => "Search"}/
-                .input-group-btn
-                  %button.btn.btn-info.orange-color
-                    %span.glyphicon.glyphicon-search
-            %span2
-              %a.color-white.cart{:href => "/carts/show"}
-                %span4.shopping-cart
-                  %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
-                  %span.cart-count #{@order.order_items.sum(:quantity)}
-            %span2
-              - if !current_page?(controller: 'admin', action: 'orders')
-                %span.contact-details
-                  %span4
-                    %i.fa.fa-fax{"aria-hidden" => "true"}
-                    %a.color-white{:href => "#"} +91-1676-220738
-                    .email-details
-                      %i.fa.fa-envelope-o{"aria-hidden" => "true"}
-                      %a.color-white{:href => "mailto:info@pumpkinzone.in"} info@pumpkinzone.in
-                    %div
-                      %i.fa.fa-mobile{"aria-hidden" => "true"}
-                      %a.color-white{:href => "#"} +91-921-7867546
-        .row-fluid
-          %ul.nav.nav-tabs.custom
-            %li
-              %a#home{:href => "/"} Home
-            %li
-              %a#about_pumpkin{:href => "/about_us"} About Pumpkin
-            %li
-              %a#our_products{:href => "/products"} Our Products
-            %li
-              %a#certificates{:href => ""} Certificates
-            %li
-              %a#contact_us{:href => ""} Contact Us
-            %li
-              %a#useful_links{:href => ""} Useful Links
-            %li
-              %a#downloads{:href => ""} Downloads
-        .row-fluid
-          - flash.each do |type, message|
-            %div{:class => "alert success fade in success-msg"}
-              %button.close{"data-dismiss" => "alert"} ×
-              = message
-          = yield
-        .row-fluid.footer{:style => "height: 100%"}
-          %div
-            %h2{:style => "margin-top: 0px"} Connect with us
-          %div
-            %span.footer-link
-              %a{:href => 'http://www.facebook.com', :target => "_blank"}
-                %i.fa.fa-facebook-square.fa-3x{"aria-hidden" => "true"}
-            %span.footer-link
-              %a{:href => 'http://www.twitter.com', :target => "_blank"}
-                %i.fa.fa-twitter-square.fa-3x{"aria-hidden" => "true"}
-            %span.footer-link
-              %a{:href => 'http://www.youtube.com', :target => "_blank"}
-                %i.fa.fa-youtube-square.fa-3x{"aria-hidden" => "true"}
-            %span.footer-link
-              %a{:href => 'https://in.pinterest.com/', :target => "_blank"}
-                %i.fa.fa-pinterest-square.fa-3x{"aria-hidden" => "true"}
-          %div
-            Copyright @ Pumpkinzone
-      .span1
+    .row.page-title
+      .col-lg-2
+        %h1.pumpkin-logo Pumpkin Zone
+      .col-lg-6
+        .input-group.search-box
+          %input.form-control{:placeholder => "Search...", :type => "Search"}/
+          .input-group-btn
+            %button.btn.btn-info.orange-color
+              %span.glyphicon.glyphicon-search
+      .col-lg-1
+      .col-lg-1.header_cart
+        %a.color-white.cart{:href => "/carts/show"}
+          %span4.shopping-cart
+            %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
+            %span.cart-count #{@order.order_items.sum(:quantity)}
+      .col-lg-2
+        - if !current_page?(controller: 'admin', action: 'orders')
+          %span.contact-details
+            %i.fa.fa-fax{"aria-hidden" => "true"}
+            %a.color-white{:href => "#"} +91-1676-220738
+            .email-details
+              %i.fa.fa-envelope-o{"aria-hidden" => "true"}
+              %a.color-white{:href => "mailto:info@pumpkinzone.in"} info@pumpkinzone.in
+            %div
+              %i.fa.fa-mobile{"aria-hidden" => "true"}
+              %a.color-white{:href => "#"} +91-921-7867546
+    .row
+      %ul.nav.nav-tabs.custom
+        %li
+          %a#home{:href => "/"} Home
+        %li
+          %a#about_pumpkin{:href => "/about_us"} About Pumpkin
+        %li
+          %a#our_products{:href => "/products"} Our Products
+        %li
+          %a#certificates{:href => ""} Certificates
+        %li
+          %a#contact_us{:href => ""} Contact Us
+        %li
+          %a#useful_links{:href => ""} Useful Links
+        %li
+          %a#downloads{:href => ""} Downloads
+    .row
+      - flash.each do |type, message|
+        %div{:class => "alert success fade in success-msg"}
+          %button.close{"data-dismiss" => "alert"} ×
+          = message
+      = yield
+    .row.footer{:style => "height: 100%"}
+      %div
+        %h2{:style => "margin-top: 0px"} Connect with us
+      %div
+        %span.footer-link
+          %a{:href => 'http://www.facebook.com', :target => "_blank"}
+            %i.fa.fa-facebook-square.fa-3x{"aria-hidden" => "true"}
+        %span.footer-link
+          %a{:href => 'http://www.twitter.com', :target => "_blank"}
+            %i.fa.fa-twitter-square.fa-3x{"aria-hidden" => "true"}
+        %span.footer-link
+          %a{:href => 'http://www.youtube.com', :target => "_blank"}
+            %i.fa.fa-youtube-square.fa-3x{"aria-hidden" => "true"}
+        %span.footer-link
+          %a{:href => 'https://in.pinterest.com/', :target => "_blank"}
+            %i.fa.fa-pinterest-square.fa-3x{"aria-hidden" => "true"}
+      %div
+        Copyright @ Pumpkinzone
