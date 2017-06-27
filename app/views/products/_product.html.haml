@@ -11,7 +11,7 @@
         %span
           %input.btn.btn-primary{id: "view_in_detail#{product.id}",type: 'button', class: 'view_in_detail', value: 'Quick View', "data-target" => "#productModal#{product.id}", "data-toggle" => "modal"}
         %span
-          = f.number_field :quantity, value: "#{@order.order_items.where(product_id: product.id).first.try(:quantity) || 1}", class: "form-control", min: 1
+          = f.number_field :quantity, value: "#{@order.order_items.where(product_id: product.id).first.try(:quantity) || 1}", class: "form-control quantity", min: 1
         %span.input-group-btn
           = f.hidden_field :product_id, value: product.id
           = f.submit "Add to Cart", class: "btn btn-primary cart-text"
@@ -46,6 +46,6 @@
                       = f.number_field :quantity, value: "#{@order.order_items.where(product_id: product.id).first.try(:quantity) || 1}", class: "form-control", min: 1
                     %span.input-group-btn
                       = f.hidden_field :product_id, value: product.id
-                      = f.submit "Add to Cart", class: "btn btn-primary cart-text"
+                      = f.submit "Add to Cart", class: "btn btn-primary cart-text add-to-cart-btn"
 
 
