@@ -1,3 +1,4 @@
 %hr
   - @products_with_categories.each do |products_with_category|
-    = render "category_corousal", products_with_category: products_with_category
+    - if products_with_category.values.first.present?
+      = render "category_corousal", products_with_category: products_with_category
