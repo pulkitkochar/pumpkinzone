@@ -2,18 +2,19 @@
   %span.h2
     = products_with_category.keys.first['name']
   %span
-    %a.see_more See more
+    %a.see_more{href: '/products'} See more
 .row
-  %div.carousel.category_carousal.slide{id: "categoryCarousel#{products_with_category.keys.first['id']}"}
+  -#%div.carousel.category_carousal.slide{id: "categoryCarousel#{products_with_category.keys.first['id']}"}
+  %div.category_carousal{id: "categoryCarousel#{products_with_category.keys.first['id']}"}
     .carousel-inner
       - products_with_category.values.first.each_slice(4).to_a.each_with_index do |products, i|
         = render "products", products: products, class_active: i == 0 ? 'active' : ''
-    %a.left.carousel-control-new{"data-slide" => "prev", :href => "#categoryCarousel#{products_with_category.keys.first['id']}"}
-      %span.glyphicon.glyphicon-chevron-left
-      %span.sr-only Previous
-    %a.right.carousel-control-new{"data-slide" => "next", :href => "#categoryCarousel#{products_with_category.keys.first['id']}"}
-      %span.glyphicon.glyphicon-chevron-right
-      %span.sr-only Next
+    -#%a.left.carousel-control-new{"data-slide" => "prev", :href => "#categoryCarousel#{products_with_category.keys.first['id']}"}
+    -#  %span.glyphicon.glyphicon-chevron-left
+    -#  %span.sr-only Previous
+    -#%a.right.carousel-control-new{"data-slide" => "next", :href => "#categoryCarousel#{products_with_category.keys.first['id']}"}
+    -#  %span.glyphicon.glyphicon-chevron-right
+    -#  %span.sr-only Next
 / /.carousel
 
 %hr.type

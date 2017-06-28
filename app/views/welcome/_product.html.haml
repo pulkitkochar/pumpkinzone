@@ -3,7 +3,7 @@
     = image_tag("products/#{product.id}a.jpg", :alt => "rss feed", :class => "img-responsive")
   %span.col-md-offset-3
     %input{id: "quick_look#{product.id}",type: 'button', class: 'quick_look', value: 'Quick Look', "data-target" => "#homeModal#{product.id}", "data-toggle" => "modal"}
-    %div.modal{id: "homeModal#{product.id}", "aria-hidden" => "true",  :role => "dialog", :class => 'myClass'}
+    %div.modal{id: "homeModal#{product.id}", "aria-hidden" => "true",  :role => "dialog"}
       .modal-dialog
         .modal-content
           .modal-body
@@ -12,7 +12,7 @@
               .col-xs-8
                 %span
                   %div.carousel.slide{id: "productCarousel#{product.id}"}
-                    .carousel-inner
+                    .carousel-inner.product_carousal
                       - Dir.glob("./app/assets/images/products/#{product.id}?.jpg").each_with_index do |image_path, i|
                         = render "modal_carousal", image: image_path, class_active: i == 0 ? 'active' : ''
                     %a.left.carousel-control-new{"data-slide" => "prev", :href => "#productCarousel#{product.id}"}

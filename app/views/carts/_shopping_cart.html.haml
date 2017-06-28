@@ -9,9 +9,51 @@
 - else
   - @order_items.each do |order_item|
     = render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true
-  %a{:href=>"/users/new"}
-    %hr.type
-      .row
-        %button.center.btn-warning.checkout-btn.btn.btn-md
-          %span
-            Proceed to checkout
+  %hr.type
+    .row.form-horizontal.form
+      = form_for(@user) do |f|
+        -if @user.errors.any?
+          #error_explanation
+            %h2= pluralize(@user.errors.count, "error")
+            %ul
+              -@user.errors.full_messages.each do |msg|
+                %li=  msg
+              %end
+        %end
+          .col-md-8
+            .h2.form_field Fill out Order Details
+            .row.form_field
+              .col-md-2
+                = f.label "Name:"
+              .col-md-2
+                .control-group
+                  = f.text_field :name, :id => 'name', required: true, title: 'only alphabets', pattern: '^[a-z A-Z]+$', autofocus: true
+              .col-md-2
+                = f.label "Email:"
+              .col-md-2
+                .control-group
+                  = f.text_field :email, :id => 'email', required: true, title: 'valid email', pattern: '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'
+              .col-md-2
+                = f.label "Address:"
+              .col-md-2
+                .control-group
+                  = f.text_area :address, :id => 'address', required: true, autofocus: true
+
+            .row.form_field
+              .col-md-2
+                = f.label "Mobile No:"
+              .col-md-2
+                .control-group
+                  = f.text_field :mobile_number, :id => 'mobile_number', required: true, title: 'exactly 10 integers ', pattern: '^[0-9]{10}$'
+              .col-md-2
+                = f.label "Pincode:"
+              .col-md-2
+                .control-group
+                  = f.text_field :pincode, :id => 'pincode', required: true, autofocus: true
+              .col-md-2
+                = f.label "State:"
+              .col-md-2
+                .control-group
+                  = f.text_field :state, :id => 'state', required: true, autofocus: true
+          .col-md-4
+            = f.submit :class => 'btn center btn-warning checkout-btn btn-md' ,id: "submit", value: 'Proceed to checkout'
