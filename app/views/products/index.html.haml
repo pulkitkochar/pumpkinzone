@@ -6,18 +6,21 @@
   .row.vertical-divider
     .col-xs-2
       %hr
-      .categories
-        %h3.title Categories
-        .category
-          %a{href: '/about_us'} Pumpkin Pressure Cookers
-        .category
-          %a{href: '/about_us'} Royal Finish Cookware
-        .category
-          %a{href: '/about_us'} Hard Anodized Cookware
-        .category
-          %a{href: '/about_us'} Induction Cookware
-        .category
-          %a{href: '/about_us'} Anodized Cookware
+        .h2 Categories:
+        .sidebar-nav
+          .navbar.navbar-default{:role => "navigation"}
+            .navbar-header
+              %button.navbar-toggle{"data-target" => ".sidebar-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %span.visible-xs.navbar-brand Sidebar menu
+            .navbar-collapse.collapse.sidebar-navbar-collapse
+              %ul.nav.navbar-nav
+                - @categories.each_with_index do |category, i|
+                  = render "side_bar_menu", category: category, class_active: i == 0 ? 'active' : ''
+      / /.nav-collapse
       %hr
       .product
         .theme New Launch
@@ -31,6 +34,6 @@
         .description Pumpkin is a fast growing brand setup by Sunil Steel Industries in Pressure Cookers and in Cookwares
         %a.btn.button.view_more{href: '/about_us'} View More
     .col-xs-10
-      %hr
-        - @products.each_slice(3).to_a.each do |product_row|
-          = render "product_row", product_row: product_row, order_item: @order_item
+      - @products_with_categories.each_with_index do |products_with_category, i|
+        - if products_with_category.values.first.present?
+          = render "category", products_with_category: products_with_category
