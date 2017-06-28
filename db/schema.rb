@@ -60,10 +60,9 @@ ActiveRecord::Schema.define(version: 20170628103446) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "price",       precision: 12, scale: 3
     t.boolean  "active"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "category_id"
   end
 
@@ -71,7 +70,6 @@ ActiveRecord::Schema.define(version: 20170628103446) do
     t.string   "name"
     t.string   "email"
     t.string   "mobile_number"
-    t.string   "city"
     t.string   "state"
     t.string   "pincode"
     t.integer  "order_id"
