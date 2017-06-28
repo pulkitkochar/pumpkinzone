@@ -258,6 +258,11 @@ h5{
   background-color: #eaebeb;
   box-shadow: 3px 3px 3px 3px #CCCCCC;
 }
+
+.categories {
+  height: 350px;
+}
+
 .form{
   border: #e3e3e3 1px solid;
   background-color: #f5f5f5;
@@ -278,11 +283,25 @@ h5{
   margin-top: 2%;
 }
 
+.category > a{
+  color: #333333 !important;
+}
+
+.category > a:hover {
+  color: #c45500 !important;
+  text-decoration: none;
+}
+
 .theme{
   background-color: #eaebeb;
   font-weight: bolder;
   font-size: x-large;
   text-align: center;
+}
+
+.title {
+  color: #767676;
+  font-weight: 400;
 }
 
 .theme_divider{
