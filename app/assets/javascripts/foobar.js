@@ -31,4 +31,8 @@ $(document).ready(function() {
         escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
         minimumInputLength: 1,
     });
+
+    $('#sample_search').on('change', function(){
+        window.location.href = '/products'
+    });
 });
