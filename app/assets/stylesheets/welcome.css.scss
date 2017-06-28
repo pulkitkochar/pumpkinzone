@@ -23,6 +23,10 @@
  height: 240px !important;
 }
 
+.fixed_quick_view{
+ height: 175px !important;
+}
+
 .row{
   margin-left: 0px !important;
 }
@@ -112,7 +116,7 @@ a.color-white:hover{
   border: solid 1px black;
 }
 
-.col-md-offset-3 > .quick_look {
+.col-md-offset-4 > .quick_look {
   text-align: center;
   opacity: 0;
   transition: opacity .35s ease;

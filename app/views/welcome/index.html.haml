@@ -52,7 +52,7 @@
     .col-xs-10#products
       = render "product_categories", product_categories: @products_with_categories
 
-      .row
+      %a.row{href: '/products'}
         %button.center.col-md-12
           %span
             View All Products
