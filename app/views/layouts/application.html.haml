@@ -9,8 +9,10 @@
     = csrf_meta_tags
   %body{:style => "height: 100%"}
     .row.page-title
-      .col-lg-2
-        %h1.pumpkin-logo Pumpkin Zone
+      .col-lg-1
+      .col-lg-1
+        %h1.pumpkin-logo
+          = image_tag("logo.jpg", :class => "img-responsive")
       .col-lg-6
         .input-group.search-box
           %input#sample_search.form-control{:placeholder => "Search...", :type => "Search"}/
