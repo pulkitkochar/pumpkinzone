@@ -4,7 +4,7 @@
     = form_for order_item, remote: true do |f|
       %h5.text-left
         Price:
-        %span= number_to_currency product.price
+        %span= number_to_indian_currency product.product_variants.first.price
       %hr
       %h4= product.name
       .input-group
@@ -33,7 +33,7 @@
                       = form_for order_item, remote: true do |f|
                         %h5.text-left
                           Price:
-                          %span= number_to_currency product.price
+                          %span= number_to_indian_currency product.product_variants.first.price
                         %hr
                         %h4= product.name
                         .input-group
