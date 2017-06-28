@@ -4,7 +4,7 @@
   %span
     %a.see_more See more
 .row
-  %div.carousel.slide{id: "categoryCarousel#{products_with_category.keys.first['id']}"}
+  %div.carousel.category_carousal.slide{id: "categoryCarousel#{products_with_category.keys.first['id']}"}
     .carousel-inner
       - products_with_category.values.first.each_slice(4).to_a.each_with_index do |products, i|
         = render "products", products: products, class_active: i == 0 ? 'active' : ''
