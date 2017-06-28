@@ -1,12 +1,12 @@
 .col-xs-4.container
   %span
-    = image_tag("products/#{product.id}a.jpg", :alt => "rss feed", :class => "img-responsive")
+    = image_tag("products/#{product.id}a.jpg", :alt => "rss feed", :class => "img-responsive fixed_image")
     = form_for order_item, remote: true do |f|
       %h5.text-left
         Price:
         %span= number_to_indian_currency product.product_variants.first.price
       %hr
-      %h4= product.name
+      %h4.name= product.name
       .input-group
         %span
           %input.btn.btn-primary{id: "view_in_detail#{product.id}",type: 'button', class: 'view_in_detail', value: 'Quick View', "data-target" => "#productModal#{product.id}", "data-toggle" => "modal"}
