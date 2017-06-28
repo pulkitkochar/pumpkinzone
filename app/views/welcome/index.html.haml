@@ -16,14 +16,17 @@
   %ol.carousel-indicators
     %li.active{"data-slide-to" => "0", "data-target" => "#mainCarousel"}
     %li{"data-slide-to" => "1", "data-target" => "#mainCarousel"}
-    %li{"data-slide-to" => "2", "data-target" => "#mainCarousel"}
+    -#%li{"data-slide-to" => "2", "data-target" => "#mainCarousel"}
+    -#%li{"data-slide-to" => "3", "data-target" => "#mainCarousel"}
   .carousel-inner
+    -#.item.active
+    -#  = image_tag('home_main_carousal/e.jpg', :alt => "rss feed", :class => "img-responsive")
+    -#.item
+    -#  = image_tag('home_main_carousal/epic.jpg', :alt => "rss feed", :class => "img-responsive")
     .item.active
-      = image_tag('home_main_carousal/e.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('about_us.jpg', :alt => "rss feed", :class => "img-responsive")
     .item
-      = image_tag('home_main_carousal/epic.jpg', :alt => "rss feed", :class => "img-responsive")
-    .item
-      = image_tag('home_main_carousal/e.jpg', :alt => "rss feed", :class => "img-responsive")
+      = image_tag('about_us_home.png', :alt => "rss feed", :class => "img-responsive")
   %a.left.carousel-control{"data-slide" => "prev", :href => "#mainCarousel"}
     %span.glyphicon.glyphicon-chevron-left
     %span.sr-only Previous
