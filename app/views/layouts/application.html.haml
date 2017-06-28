@@ -13,7 +13,8 @@
         = image_tag("logo.jpg", :class => "img-responsive")
       .col-md-6
         .input-group.search-box
-          %input#sample_search.form-control{:placeholder => "Search...", :type => "Search"}/
+          %select#sample_search.form-control
+            %option{:value => ""} Search ....
           .input-group-btn
             %button.btn.btn-info.orange-color
               %span.glyphicon.glyphicon-search

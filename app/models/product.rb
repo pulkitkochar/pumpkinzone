@@ -4,4 +4,11 @@ class Product < ActiveRecord::Base
   belongs_to :category
 
   default_scope { where(active: true) }
+
+  def as_json
+    {
+        id: id,
+        name: name
+    }
+  end
 end

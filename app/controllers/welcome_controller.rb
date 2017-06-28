@@ -10,15 +10,15 @@ class WelcomeController < ApplicationController
   end
 
   def search
-    @order = current_order
-    @category = Category.first(3)
-    @products_with_categories = []
-    @category.each do |category|
-      @products_with_categories <<
-          { category => Product.where(category_id: category.id).where("name LIKE ?" , "%#{params[:search_keyword]}%").first(12)}
+    @products = Product.where("name LIKE ?" , "%#{params[:search_keyword]}%")
+    @category_ids = @products.collect(&:category_id).uniq
+    @categories = Category.where(id: @category_ids)
+    result = []
+    @categories.each do |cat|
+      products = @products.select{|product| product.category_id = cat.id}.first(2)
+      result << {name: cat.name, children: products.map(&:as_json)}
     end
-    @order_item = current_order.order_items.new
-    render :partial => 'product_categories'
+    render json: {items: result}
   end
 
   def about

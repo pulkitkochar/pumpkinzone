@@ -1,28 +1,34 @@
 $(document).ready(function() {
-    var searchRequest = null;
-
-    $(function () {
-        var minlength = 3;
-
-        $("#sample_search").keyup(function () {
-            var that = this,
-                value = $(this).val();
-
-            if (value.length >= minlength ) {
-                if (searchRequest != null)
-                    searchRequest.abort();
-                searchRequest = $.ajax({
-                    type: "GET",
-                    url: "/search",
-                    data: {
-                        'search_keyword' : value
-                    },
-                    dataType: "text",
-                    success: function(data){
-                        $("#products").html(data);
-                    }
-                });
-            }
-        });
+    $("#sample_search").select2({
+        theme: "bootstrap",
+        ajax: {
+            url: "/search",
+            dataType: 'json',
+            type: "GET",
+            delay: 250,
+            data: function (params) {
+                return {
+                    search_keyword: params.term
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data.items, function (item, i) {
+                        return {
+                            text: item.name,
+                            children: $.map(item.children, function(child){
+                                return {
+                                    id: child.id,
+                                    text: child.name
+                                }
+                            })
+                        }
+                    })
+                }
+            },
+            cache: true
+        },
+        escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+        minimumInputLength: 1,
     });
 });
