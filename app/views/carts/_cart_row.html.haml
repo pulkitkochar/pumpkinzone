@@ -1,20 +1,23 @@
 .well
   .row
-    .col-xs-8
-      %h4= product.name
+    .col-xs-4
+      %h4.cart-product= product.name
+      = link_to '<i class="fa fa-trash fa-lg trash-icon"></i>'.html_safe, order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true }
+    .col-xs-4
+      = image_tag("products/#{order_item.product.id}a.jpg", :alt => "rss feed", :class => "img-responsive fixed_image")
     .col-xs-4
       = form_for order_item, remote: true do |f|
-        %h4.text-right
+        %h4.text-right.cart-product
           Unit Price:
-          %span{:style => "color: green"}= number_to_indian_currency order_item.unit_price
+          %span.checkout-price= number_to_indian_currency order_item.unit_price
         .row
           .col-xs-4
             = f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1
             = f.hidden_field :product_id, value: product.id
           .col-xs-8.text-right
             .btn-group
-              = f.submit "Update Quantity", class: "btn btn-primary"
-              = link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" }
-        %h4.text-right
+              = f.submit "Save", class: "btn btn-primary update-btn"
+        %h4.text-right.cart-product
           Total Price:
-          %span{:style => "color: green"}= number_to_indian_currency order_item.total_price
+          %span.checkout-price= number_to_indian_currency order_item.total_price
+``

@@ -256,6 +256,38 @@ h5{
   border-top-right-radius: 0px !important;
 }
 
+.trash-icon{
+  color: #6e6e6e;
+}
+
+.cart-product{
+  color: #434343 !important;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-family: dinnextproregular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.checkout-price{
+  font-size: 14px;
+  font-family: dinnextprobold;
+  color: #434343;
+  font-weight: bold;
+}
+
+.update-btn{
+  width: 100px;
+  color: #fff;
+  background-color: #333 !important;
+  border-color: #333 !important;
+  border: none;
+  font-family: dinnextproregular;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  height: 50px;
+  letter-spacing: 1px;
+}
+
 .add-to-cart-btn{
   margin-left: -70% !important;
 }
