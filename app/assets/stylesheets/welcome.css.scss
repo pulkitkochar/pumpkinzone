@@ -346,7 +346,23 @@ h5{
    text-align: center;
    font-weight: bold;
    background-color: #eaebeb;
+   top: 20%;
+   height: 50%;
  }
+
+.product_name{
+  color: #6e6e6e;
+  display: block;
+  font-size: 14px;
+  font-family: dinnextproregular;
+}
+
+.product_price{
+  color: #434343;
+  font-size: 16px;
+  text-align: center;
+  font-family: dinnextproregular;
+}
 
 .text{
   padding-top: 1.5%;
