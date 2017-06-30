@@ -7,8 +7,8 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body{:style => "height: 100%"}
-    .row.page-title
+  %body
+    .row.page-title.header
       .col-md-1.pumpkin-logo
         = image_tag("favicon.ico", :class => "img-responsive")
       .col-md-6
@@ -35,8 +35,8 @@
             %div
               %i.fa.fa-mobile{"aria-hidden" => "true"}
               %a.color-white{:href => "#"} +91-921-7867546
-    .row
-      %ul.nav.nav-tabs.custom
+    .row.menu_bar
+      %ul.nav.nav-tabs
         %li
           %a#home{:href => "/"} Home
         %li
@@ -49,15 +49,14 @@
           %a#contact_us{:href => ""} Contact Us
         %li
           %a#useful_links{:href => ""} Useful Links
-        %li
-          %a#downloads{:href => ""} Downloads
-    .row
+    .row.content
+      %div{:style => "height: 130px"}
       - flash.each do |type, message|
         %div{:class => "alert success fade in success-msg"}
           %button.close{"data-dismiss" => "alert"} ×
           = message
       = yield
-    .row.footer{:style => "height: 100%"}
+    %footer.row.footer{:style => "height: 100%"}
       %div
         %h2{:style => "margin-top: 0px"} Connect with us
       %div

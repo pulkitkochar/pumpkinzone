@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @order = current_order
-    @category = Category.first(3)
+    @category = Category.where(id: [2,3,4])
     @products_with_categories = []
     @category.each do |category|
       @products_with_categories << { category => Product.where(category_id: category.id).first(4)}

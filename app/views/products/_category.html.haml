@@ -1,3 +1,3 @@
-%hr{id: "category_with_id_#{products_with_category.keys.first.id}"}
+%div{id: "category_#{products_with_category.keys.first.name.split.join('_')}"}
   - products_with_category.values.first.each_slice(3).to_a.each do |product_row|
     = render "product_row", product_row: product_row, order_item: @order_item

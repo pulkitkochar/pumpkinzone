@@ -1,3 +1,3 @@
-%li{class: class_active}
-  %a{:href => "#category_with_id_#{category.id}"}
+%li
+  %a{:href => "#category_#{category.name.split.join('_')}", :class => class_active}
     =category.name

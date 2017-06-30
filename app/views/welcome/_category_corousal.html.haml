@@ -2,7 +2,7 @@
   %span.h2
     = products_with_category.keys.first['name']
   %span
-    %a.see_more{href: '/products'} See more
+    %a.see_more{href: "/products/#category_#{products_with_category.keys.first.name.split.join('_')}"} See more
 .row
   -#%div.carousel.category_carousal.slide{id: "categoryCarousel#{products_with_category.keys.first['id']}"}
   %div.category_carousal{id: "categoryCarousel#{products_with_category.keys.first['id']}"}

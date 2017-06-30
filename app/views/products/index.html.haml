@@ -4,36 +4,28 @@
 
 .pageContainer
   .row.vertical-divider
-    .col-xs-2
-      %hr
-        .h2 Categories:
-        .sidebar-nav
-          .navbar.navbar-default{:role => "navigation"}
-            .navbar-header
-              %button.navbar-toggle{"data-target" => ".sidebar-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-                %span.sr-only Toggle navigation
-                %span.icon-bar
-                %span.icon-bar
-                %span.icon-bar
-              %span.visible-xs.navbar-brand Sidebar menu
-            .navbar-collapse.collapse.sidebar-navbar-collapse
-              %ul.nav.navbar-nav
-                - @categories.each_with_index do |category, i|
-                  = render "side_bar_menu", category: category, class_active: i == 0 ? 'active' : ''
-      / /.nav-collapse
-      %hr
+    #category_nav.col-xs-2.static{"data-spy"=>"affix", "data-offset-bottom"=>"130"}
+      .h2 Categories:
+      .sidebar-nav
+        .navbar.navbar-default.category_nav{:role => "navigation"}
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".sidebar-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %span.visible-xs.navbar-brand Sidebar menu
+          #scroll.navbar-collapse.collapse.sidebar-navbar-collapse
+            %ul.nav.navbar-nav
+              - @categories.each_with_index do |category, i|
+                = render "side_bar_menu", category: category, class_active: i == 0 ? 'active_nav' : ''
+          / /.nav-collapse
       .product
         .theme New Launch
         = image_tag('new_launch_home.png', :alt => "rss feed", :class => "img-responsive")
         .description Pumpkin launches its new products Elantra in Pressure Cookers and Hard Anodized Cookwares
         %a.btn.button.view_more{href: '/about_us'} View More
-      %hr
-      .product
-        .theme About Us
-        = image_tag('about_us_home.png', :alt => "rss feed", :class => "img-responsive")
-        .description Pumpkin is a fast growing brand setup by Sunil Steel Industries in Pressure Cookers and in Cookwares
-        %a.btn.button.view_more{href: '/about_us'} View More
-    .col-xs-10
-      - @products_with_categories.each_with_index do |products_with_category, i|
+    .col-xs-10.col-xs-offset-2
+      - @products_with_categories.each do |products_with_category|
         - if products_with_category.values.first.present?
           = render "category", products_with_category: products_with_category
