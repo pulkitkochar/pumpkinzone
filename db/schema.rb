@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20170628103446) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
   end
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20170628103446) do
     t.datetime "updated_at",                           null: false
   end
 
-  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"
-  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id"
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id", using: :btree
 
   create_table "order_statuses", force: :cascade do |t|
     t.string   "name"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170628103446) do
     t.datetime "updated_at",                               null: false
   end
 
-  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id"
+  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
 
   create_table "product_variants", force: :cascade do |t|
     t.integer  "product_id"
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170628103446) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "product_variants", ["product_id"], name: "index_product_variants_on_product_id"
+  add_index "product_variants", ["product_id"], name: "index_product_variants_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -78,6 +81,11 @@ ActiveRecord::Schema.define(version: 20170628103446) do
     t.string   "address"
   end
 
-  add_index "users", ["order_id"], name: "index_users_on_order_id"
+  add_index "users", ["order_id"], name: "index_users_on_order_id", using: :btree
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "order_statuses"
+  add_foreign_key "product_variants", "products"
+  add_foreign_key "users", "orders"
 end
