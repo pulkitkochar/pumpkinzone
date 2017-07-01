@@ -22,7 +22,8 @@
                       %span.glyphicon.glyphicon-chevron-right
                       %span.sr-only Next
                   / /.carousel
-              .col-xs-5.description
+              .col-xs-1
+              .col-xs-4.product-details
                 = form_for @order_item, remote: true do |f|
                   %h1.product_name= product.name
                   %h5.product_price
