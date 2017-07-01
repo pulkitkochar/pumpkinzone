@@ -38,7 +38,7 @@ $(document).on('turbolinks:load',function() {
 
     $('#sample_search').on("select2:select", function(event) {
         var value = $(event.currentTarget).find("option:selected").val();
-        window.location.href = '/products/1'
+        window.location.href = '/products/' + value;
     });
 
     //Check if the current URL contains '#'
