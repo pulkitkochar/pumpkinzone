@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
     $("#sample_search").select2({
         theme: "bootstrap",
         ajax: {
