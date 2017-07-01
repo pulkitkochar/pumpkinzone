@@ -45,7 +45,7 @@ $(document).on('turbolinks:load',function() {
             location.reload(true);
         }
         if (document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] != ''){
-            $('[href="#' + document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] + '"]').trigger('click');
+            $('[href="#' + document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] + '"]').get(0).click();
         }
     }
 
