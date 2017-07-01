@@ -1,20 +1,6 @@
 %script{:src => "https://code.jquery.com/jquery-2.1.4.min.js"}
 %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"}
 %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
-:javascript
-  $(document).ready(function(){
-      //Check if the current URL contains '#'
-      if(document.URL.indexOf("#")==-1){
-          // Set the URL to whatever it was plus "#".
-          url = document.URL+"#";
-          location = "#";
-
-          //Reload the page
-          location.reload(true);
-      }
-      $('[href="' + document.URL.split('/')[document.URL.split('/').length - 1] + '"]').trigger('click');
-  });
-
 
 .pageContainer
   .row.vertical-divider

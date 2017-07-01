@@ -36,6 +36,21 @@ $(document).on('turbolinks:load',function() {
         window.location.href = '/products'
     });
 
+    //Check if the current URL contains '#'
+    if(document.URL.split('/')[document.URL.split('/').length - 1].split('#')[0]=='products') {
+        if (document.URL.indexOf("#") == -1) {
+            // Set the URL to whatever it was plus "#".
+            url = document.URL + "#";
+            location = "#";
+
+            //Reload the page
+            location.reload(true);
+        }
+        if (document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] != ''){
+            $('[href="#' + document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] + '"]').trigger('click');
+        }
+    }
+
     $(document).on("scroll", onScroll);
 
     //smoothscroll
