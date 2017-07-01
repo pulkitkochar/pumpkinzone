@@ -9,8 +9,10 @@ class OrderItemsController < ApplicationController
       @order.save
     end
     session[:order_id] = @order.id
+    product = Product.find(params[:order_item][:product_id])
+
     flash[:success] = "Added product to cart"
-    redirect_to :back
+    redirect_to "/products#category_" + product.category.name.gsub(" ", "_")
   end
 
   def update
