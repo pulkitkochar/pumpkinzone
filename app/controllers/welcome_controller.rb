@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
   end
 
   def search
-    @products = Product.where("name LIKE ?" , "%#{params[:search_keyword]}%")
+    @products = Product.where('name ILIKE ?', '%' + params[:search_keyword] + '%')
     @category_ids = @products.collect(&:category_id).uniq
     @categories = Category.where(id: @category_ids)
     result = []
