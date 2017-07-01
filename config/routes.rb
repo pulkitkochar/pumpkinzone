@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get '/admin/orders' => 'admin#orders'
 
-  resources :products, only: [:index]
+  resources :products, only: [:index, :show]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :users

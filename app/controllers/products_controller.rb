@@ -8,4 +8,9 @@ class ProductsController < ApplicationController
     @order = current_order
     @order_item = current_order.order_items.new
   end
+
+  def show
+    product = Product.find params[:id]
+    redirect_to "/products#category_" + product.category.name.gsub(" ", "_")
+  end
 end

@@ -32,8 +32,13 @@ $(document).on('turbolinks:load',function() {
         minimumInputLength: 1,
     });
 
-    $('#sample_search').on('change', function(){
-        window.location.href = '/products'
+    // $('#sample_search').on('change', function(){
+    //     window.location.href = '/products'
+    // });
+
+    $('#sample_search').on("select2:select", function(event) {
+        var value = $(event.currentTarget).find("option:selected").val();
+        window.location.href = '/products/1'
     });
 
     //Check if the current URL contains '#'
