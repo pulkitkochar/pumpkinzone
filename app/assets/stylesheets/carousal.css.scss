@@ -18,7 +18,13 @@
 .carousel-control-new.right {
   right: 15px;
   left: auto;
+  margin-right: 3%;
 }
+
+.carousel-control-new.left {
+  margin-left: 3%;
+}
+
 .carousel-caption {
   position: absolute;
   right: 0;
