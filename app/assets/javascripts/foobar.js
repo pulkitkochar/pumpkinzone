@@ -32,23 +32,16 @@ $(document).on('turbolinks:load',function() {
         minimumInputLength: 1,
     });
 
-    // $('#sample_search').on('change', function(){
-    //     window.location.href = '/products'
-    // });
-
     $('#sample_search').on("select2:select", function(event) {
         var value = $(event.currentTarget).find("option:selected").val();
         window.location.href = '/products/' + value;
     });
 
-    //Check if the current URL contains '#'
     if(document.URL.split('/')[document.URL.split('/').length - 1].split('#')[0]=='products') {
         if (document.URL.indexOf("#") == -1) {
-            // Set the URL to whatever it was plus "#".
             url = document.URL + "#";
             location = "#";
 
-            //Reload the page
             location.reload(true);
         }
         if (document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] != ''){
@@ -58,7 +51,6 @@ $(document).on('turbolinks:load',function() {
 
     $(document).on("scroll", onScroll);
 
-    //smoothscroll
     $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
