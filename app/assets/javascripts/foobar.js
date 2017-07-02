@@ -37,25 +37,17 @@ $(document).on('turbolinks:load',function() {
         window.location.href = '/products/' + value;
     });
 
-    if(document.URL.split('/')[document.URL.split('/').length - 1].split('#')[0]=='products') {
-        if (document.URL.indexOf("#") == -1) {
-            url = document.URL + "#";
-            location = "#";
-
-            location.reload(true);
+    $("#category_nav").affix({
+        offset: {
+            bottom: 130
         }
-    }
+    });
 
     $(document).on("scroll", onScroll);
 
     $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
-
-        $('a').each(function () {
-            $(this).removeClass('active_nav');
-        })
-        $(this).addClass('active_nav');
 
         var target = this.hash,
             menu = target;
@@ -67,6 +59,17 @@ $(document).on('turbolinks:load',function() {
             $(document).on("scroll", onScroll);
         });
     });
+});
+
+$(document).on('turbolinks:load',function(){
+    if (document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] !== undefined){
+        $('#scroll ul li a').removeClass("active_nav");
+        $('[href="#' + document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] + '"]').addClass("active_nav");
+        $('html, body').stop().animate({
+            'scrollTop': $('#' + document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] +'').offset().top - 130
+        }, 500, 'swing', function () {
+        });
+    };
 });
 
 function onScroll(event){
