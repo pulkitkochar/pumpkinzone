@@ -10,22 +10,22 @@
     = csrf_meta_tags
   %body
     .row.page-title.header
-      .col-md-1.pumpkin-logo
+      .col-xs-1.pumpkin-logo
         = image_tag("favicon.ico", :class => "img-responsive")
-      .col-md-6
+      .col-xs-6
         .input-group.search-box
           %select#sample_search.form-control
             %option{:value => ""} Search for Products, Categories and More
           .input-group-btn
             %button.btn.btn-info.orange-color
               %span.glyphicon.glyphicon-search
-      .col-md-2
-      .col-md-1.header_cart
+      .col-xs-1
+      .col-xs-2.header_cart
         %a.color-white.cart{:href => "/carts/show"}
           %span4.shopping-cart
             %i.fa.fa-shopping-cart.fa-3x{"aria-hidden" => "true"}
             %span.cart-count #{@order.order_items.sum(:quantity)}
-      .col-md-2
+      .col-xs-2
         - if !current_page?(controller: 'admin', action: 'orders')
           %span.contact-details
             %i.fa.fa-fax{"aria-hidden" => "true"}
@@ -45,11 +45,11 @@
         %li
           %a#our_products{:href => "/products"} Our Products
         %li
-          %a#certificates{:href => ""} Certificates
+          %a#certificates.mobile{:href => ""} Certificates
         %li
           %a#contact_us{:href => ""} Contact Us
         %li
-          %a#useful_links{:href => ""} Useful Links
+          %a#useful_links.mobile{:href => ""} Useful Links
     .row.content
       %div{:style => "height: 130px"}
       - flash.each do |type, message|

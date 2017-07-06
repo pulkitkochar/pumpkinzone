@@ -8,7 +8,8 @@
       %hr
       %h4.name= product.name
       .input-group
-        %span
+        .col-xs-2.no_padding
+        %span.col-xs-3.no_padding
           %input.btn.btn-primary{id: "view_in_detail#{product.id}",type: 'button', class: 'view_in_detail', value: 'Quick View', "data-target" => "#productModal#{product.id}", "data-toggle" => "modal"}
           %div.modal{id: "productModal#{product.id}", "aria-hidden" => "true",  :role => "dialog"}
             .modal-dialog
@@ -43,11 +44,12 @@
                             = f.hidden_field :product_id, value: product.id
                             = f.submit "Add to Cart", class: "btn btn-primary add-to-cart-btn"
                     .col-xs-1
-        %span
+        %span.col-xs-2.no_padding
           = f.number_field :quantity, value: "#{@order.order_items.where(product_id: product.id).first.try(:quantity) || 1}", class: "form-control quantity", min: 1
-        %span.input-group-btn
+        %span.input-group-btn.col-xs-3.no_padding
           = f.hidden_field :product_id, value: product.id
           = f.submit "Add to Cart", class: "btn btn-primary cart-text add-to-cart-btn"
+        .col-xs-2.no_padding
 
 
 

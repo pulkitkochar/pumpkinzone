@@ -45,7 +45,7 @@ $(document).on('turbolinks:load',function() {
 
     $(document).on("scroll", onScroll);
 
-    $('a[href^="#"]').on('click', function (e) {
+    $('a[href^="#category"]').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
 
@@ -62,7 +62,7 @@ $(document).on('turbolinks:load',function() {
 });
 
 $(document).on('turbolinks:load',function(){
-    if (document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] !== undefined){
+    if (document.URL.split('/')[document.URL.split('/').length - 1].split('#category')[1] !== undefined){
         $('#scroll ul li a').removeClass("active_nav");
         $('[href="#' + document.URL.split('/')[document.URL.split('/').length - 1].split('#')[1] + '"]').addClass("active_nav");
         $('html, body').stop().animate({
